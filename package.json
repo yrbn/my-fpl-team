@@ -9,6 +9,8 @@
     "dev": "next dev",
     "postinstall": "prisma generate",
     "lint": "next lint",
+    "lint:staged": "lint-staged --allow-empty",
+    "prepare": "husky install",
     "start": "next start"
   },
   "dependencies": {
@@ -35,8 +37,11 @@
     "autoprefixer": "^10.4.14",
     "eslint": "^8.47.0",
     "eslint-config-next": "^13.5.4",
+    "eslint-config-prettier": "^9.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.0.2",
     "postcss": "^8.4.27",
-    "prettier": "^3.0.0",
+    "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.1",
     "prisma": "^5.1.1",
     "tailwindcss": "^3.3.3",
@@ -45,5 +50,8 @@
   "ct3aMetadata": {
     "initVersion": "7.22.0"
   },
-  "packageManager": "pnpm@8.9.2"
+  "packageManager": "pnpm@8.9.2",
+  "volta": {
+    "node": "18.18.2"
+  }
 }
