@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🐶 Husky pre-commit checks starting 🐶"
+
+pnpm run lint:staged
+
+echo "All checks passed ✅🐶"

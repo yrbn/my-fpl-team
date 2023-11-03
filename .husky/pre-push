@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "🐶 Husky pre-push checks starting 🐶"
+
+pnpm run lint
+
+echo "All checks passed ✅🐶"

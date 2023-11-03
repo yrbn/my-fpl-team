@@ -7,6 +7,7 @@ const config = {
   plugins: ["@typescript-eslint"],
   extends: [
     "next/core-web-vitals",
+    "prettier",
     "plugin:@typescript-eslint/recommended-type-checked",
     "plugin:@typescript-eslint/stylistic-type-checked",
   ],
@@ -23,7 +24,14 @@ const config = {
         fixStyle: "inline-type-imports",
       },
     ],
-    "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        argsIgnorePattern: "^_",
+        varsIgnorePattern: "^_",
+        caughtErrorsIgnorePattern: "^_",
+      },
+    ],
     "@typescript-eslint/no-misused-promises": [
       2,
       {
