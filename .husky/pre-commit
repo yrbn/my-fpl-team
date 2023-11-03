@@ -5,4 +5,4 @@ echo "🐶 Husky pre-commit checks starting 🐶"
 
 pnpm run lint:staged
 
-echo "All checks passed ✅✅✅✅"
+echo "All checks passed ✅🐶"
