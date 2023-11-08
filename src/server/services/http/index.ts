@@ -1,3 +1,4 @@
+import { TRPCError } from "@trpc/server";
 import { HttpMethods } from "./types";
 
 export const httpRequest = async <T>(
@@ -16,7 +17,10 @@ export const httpRequest = async <T>(
   });
 
   if (!response.ok) {
-    throw new Error(response.statusText);
+    throw new TRPCError({
+      code: response.status === 404 ? "NOT_FOUND" : "INTERNAL_SERVER_ERROR",
+      message: response.statusText,
+    });
   }
 
   return response.json() as T;
